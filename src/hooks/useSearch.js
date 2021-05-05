@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const useSearch = () => {
   const [apiState, setApiState] = useState('');
-  const [searchValues, setValues] = useState([]);
+  const [searchValues, setValues] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const searchCall = async (searchString = '') => {
@@ -16,6 +16,7 @@ const useSearch = () => {
       if (!result || result.error) {
         setApiState('There was some issue reaching the server, please try again after sometime');
         console.error('there was some issue reaching the server, please try again after sometime');
+        setValues({});
       }
       setApiState(`Here are your results for ${searchString}`);
       setValues(result);
