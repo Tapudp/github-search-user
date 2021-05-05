@@ -18,7 +18,7 @@ const Search = ({ searchCall, apiState }) => {
       <button className='submitBtn' onClick={() => searchCall(string)} disabled={string === ''}>
         Submit
       </button>
-      {apiState === '' ? <></> : <div className='fail-msg'>{apiState}</div>}
+      <div className='apistate'>{apiState}</div>
     </div>
   );
 };

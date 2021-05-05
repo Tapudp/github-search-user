@@ -17,7 +17,7 @@
 
 .result-wrapper {
   position: relative;
-  margin-top: 80px;
+  margin-top: 110px;
 }
 
 .searchbar {
@@ -46,4 +46,9 @@
   display: flex;
   align-items: baseline;
   justify-content: space-evenly;
+}
+
+.apistate {
+  font-family: 'Sofia', sans-serif;
+  color: #fff;
 }

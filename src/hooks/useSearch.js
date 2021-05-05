@@ -17,7 +17,7 @@ const useSearch = () => {
         setApiState('There was some issue reaching the server, please try again after sometime');
         console.error('there was some issue reaching the server, please try again after sometime');
       }
-      setApiState(``);
+      setApiState(`Here are your results for ${searchString}`);
       setValues(result);
       console.log('after api >>>> ', result);
     } catch (e) {
