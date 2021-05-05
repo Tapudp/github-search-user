@@ -19,4 +19,4 @@
 
 ## Current deployment
 
--
+- The app is up on this URL, deployed via netlify : https://csb-cr3ym.netlify.app/
