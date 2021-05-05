@@ -1,20 +1,17 @@
 import './App.css';
 import Search from './Search';
 import Result from './Result';
-import { useState } from 'react';
+import useSearch from './hooks/useSearch';
 
 function App() {
-  const [apiState, setApiState] = useState('');
-  const [searchValues, setValues] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const {
+    actions: { searchCall, setApiState, setValues, setIsLoading },
+    store: { apiState, searchValues, isLoading },
+  } = useSearch();
   return (
     <div className='App'>
-      <Search setApiState={setApiState} setValues={setValues} setIsLoading={setIsLoading} />
-      {!isLoading ? (
-        <Result apiState={apiState} searchValues={searchValues.items} />
-      ) : (
-        <div>Loading . . . </div>
-      )}
+      <Search searchCall={searchCall} apiState={apiState} />
+      <Result searchValues={searchValues} isLoading={isLoading} />
     </div>
   );
 }
